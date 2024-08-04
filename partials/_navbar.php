@@ -14,6 +14,8 @@ $translations = require "$lang.php";
 ?>
 <head> 
     <link rel="stylesheet" type="text/css" href="reportdrop.css"> 
+    <a href="?lang=en">English</a>
+    <a href="?lang=hi">हिन्दी</a>
 </head>
 
 <div class="container">
