@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var reenteredPassword = document.getElementById("password1").value;
+
+            if(password != "" && reenteredPassword != "") {
+                if(password == reenteredPassword) {
+                    document.getElementById("passwordErr").innerHTML = "";
+                    document.getElementById("reenteredPasswordErr").innerHTML = "";
+                    document.getElementById("submit").disabled = false;
+                } else {
+                    document.getElementById("passwordErr").innerHTML = "Passwords do not match";
+                    document.getElementById("reenteredPasswordErr").innerHTML = "Passwords do not match";
+                    document.getElementById("submit").disabled = true;
+                }
+            } else {
+                document.getElementById("submit").disabled = true;
+            }
+        }
+    </script>
+</head>
+<body>
+
+  <section class="vh-100" style="background-color: lightblue;">
+    <div class="container h-100" >
+      <div class="row d-flex justify-content-center align-items-center h-100" >
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5" style="background-color: lemonchiffon">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+  
+                  <form action="reg2.php" method="post" enctype="multipart/form-data" class="mx-1 mx-md-4">
+  
+                    <div class="form-group">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <input type="text" id="name" name="name" class="form-control" required>
+                        <label class="form-label" for="name">Your Full Name</label>
+                      </div>
+                    </div>
+  
+                    <div class="form-group">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                        <input type="email" name="email" id="email" class="form-control" required>
+                        <label class="form-label" for="email">Your Email</label>
+                      </div>
+                    </div>
+  
+                    <div class="form-group">
+                      <div>
+                      <span class="error" id="passwordErr"></span>
+                        <input type="password" name="password" id="password" class="form-control" onkeyup="validatePassword()"  required>
+                        <label for="password">Password</label>
+                        
+                      </div>
+                    </div>
+  
+                    <div class="form-group">
+                      
+                      <div data-mdb-input-init class="form-outline flex-fill mb-0">
+                      <span class="error" id="reenteredPasswordErr"></span>
+                        <input type="password" id="password1" name="password1" class="form-control" onkeyup="validatePassword()" required>
+                        <label class="form-label" for="form3Example4cd">Re-type your password</label>
+                       
+                      </div>
+                    </div>
+  
+                    <div class="form-group">
+                      
+                      <label>
+                        <input  type="checkbox" name="agree" value="agree" id="agree" required>I agree all statements in <p><a href="#!">Terms of service</a></p>
+                       
+                        
+                      </label>
+                    </div>
+  
+                    <div class="form-group">
+                      <button  type="submit" value="submit" data-mdb-button-init data-mdb-ripple-init class="form-group btn-primary btn-lg" id="submit" disabled>Register</button>
+                    </div>
+                    Click on the <a href="login_form.php">Link</a> to Login. If you have already an account.
+                  </form>
+  
+                </div>
+                <div class="form-group col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="./img/DJ.jpg"
+                    class="img-fluid" alt="Sample image">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteRule ^login$ Login_form.php [L]
+RewriteRule ^disp$ dispatch.php [L]
+# Add more rules for other pages
